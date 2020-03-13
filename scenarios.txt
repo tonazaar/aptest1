@@ -1,0 +1,23 @@
+
+Scenario-1
+
+The RSP is connected through eth in laptop
+The RSP is providing hotspot  
+- as shared 
+
+
+Images of working
+
+Script to setup
+
+
+Other support tools and setup
+
+- dnsmasq
+
+- DCPD files needed
+
+- Manual config
+
+
+
