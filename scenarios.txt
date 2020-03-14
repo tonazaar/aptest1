@@ -37,6 +37,27 @@ Scenario-7
 Use as captive portal    
 
 
+Scenario-8
+Use keyring to protect access keys of users/groups
+- college groups, student groups, merchant groups
+ 
+
+Scenario-9
+Explore voucher based access
+ 
+
+
+Scenario-10
+SSID and password access + user login/otp
+- two layer security
+ 
+
+
+Scenario-11
+SSID and password access + user login/otp
+- two layer security
+- record logs and verify needed data is obtained 
+- explore variations and data collection
 
 
 

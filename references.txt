@@ -224,3 +224,19 @@ dns=dnsmasq
 What is difference (adhoc and hotspot)
 https://wiki.archlinux.org/index.php/NetworkManager#Checking_connectivity
 Choose either Hotspot or Ad-hoc as Wi-Fi mode.
+
+
+
+--------------------------------------------------------
+
+Proxy
+https://wiki.archlinux.org/index.php/Proxy_server
+
+Supplicant
+https://linuxalfi.wordpress.com/2011/11/08/connectify-for-linux-with-single-wireless-interface/
+
+
+Dualwifi (later)
+
+
+Mesh
