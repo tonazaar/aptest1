@@ -60,6 +60,8 @@ SSID and password access + user login/otp
 - explore variations and data collection
 
 
+Scenario-12
+Experiment with bridge and NAT to verify which is better
 
 
 Scenario-1
