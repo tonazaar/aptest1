@@ -1,2 +1,7 @@
+https://unix.stackexchange.com/questions/174558/use-only-one-wireless-card-to-connect-to-wifi-network-and-share-internet-through
+
+https://linuxalfi.wordpress.com/2011/11/08/connectify-for-linux-with-single-wireless-interface/
+
+https://wiki.archlinux.org/index.php/Internet_sharing#Configuration
 
 https://wiki.archlinux.org/index.php/Software_access_point
