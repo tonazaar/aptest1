@@ -1,9 +1,58 @@
 
 Scenario-1
+Basic scripts
+Their explanation
 
+Scenario-2
+Stop dnsmasq
+
+Known issues exist with othe DNS, references ....
+
+Scenario-3
+Frequently disconnecting etc
+
+Due to dynamic mca
+
+Identifying 
+Correcting that
+
+
+Scenario-4
+Switching network
+Its effect on users
+
+Scenario-5
+Address range hit limits
+
+Changing the limits,
+command to restart
+Check what happens to existing users
+
+Scenario-6
+Use wpasupplicant        
+
+Proxy may not be needed (need to check its usage)
+
+Scenario-7
+Use as captive portal    
+
+
+
+
+
+
+Scenario-1
 The RSP is connected through eth in laptop
 The RSP is providing hotspot  
 - as shared 
+
+Command used
+
+nmcli connection add type wifi ifname wlan0 con-name local-ap autoconnect yes ssid test-ap mode ap
+nmcli connection modify local-ap 802-11-wireless.mode ap 802-11-wireless-security.key-mgmt wpa-psk ipv4.method shared 802-11-wireless-security.
+psk 'PASSWORD'
+nmcli connection up con-name
+
 
 
 Images of working
@@ -20,4 +69,7 @@ Other support tools and setup
 - Manual config
 
 
+References
+
+https://wiki.archlinux.org/index.php/NetworkManager
 
