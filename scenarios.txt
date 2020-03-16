@@ -1,52 +1,47 @@
 
 Scenario-1
+Create basic setup
 
-Setup
 1) The RSP is connected by sharing internet eth0 in laptop
 2) The RSP provides access-point for other mobiles to connect
 
 
 Scenario-2
-Verify effect of dnsmasq
+In basic setup verify effect of dnsmasq
 
 1) Stop dnsmasq
-2) check various issues
-Known issues exist with othe DNS, references ....
+2) Check various issues
+3) Have remote dns and check issues
 
 Scenario-3
-Unstable network
+Observe unstable issues in network
 
-1) Happens due to dynamic mca
-2) Like frequently disconnecting 
-3) Identify outputs, samples, patterns
-4) Correct it and verify
+1) It can happen due to dynamic mca like frequently disconnecting 
+2) Look for output samples, patterns
+3) Confirm it gets fixed by correcting
 
 
 Scenario-4
-Switching internet network 
-Switch eth0, with eth1
-Switch wlan0, with wlan1
-Its effect on users
+Switch internet network 
+
+1) Observe effect on users
 
 Scenario-5
-Address range hit limits
+Test Address range limit issues
 
-Changing the limits,
-command to restart
-Check what happens to existing users
+1) Changing the limits
+2) Check the type of problems
+3) Check what happens to existing users
 
 Scenario-6
-Use wpasupplicant        
-
+Use with wpasupplicant        
 
 Scenario-7
 Use as captive portal    
 
-1) Provide controlled access to wifi network
 
 Scenario-8
 Use keyring to protect access keys of users/groups
-- college groups, student groups, merchant groups
  
 
 Scenario-9
@@ -54,21 +49,21 @@ Explore voucher based access
  
 
 Scenario-10
-SSID and password access + user login/otp
-- two layer security
+Create SSID and password access + user login/otp
+
+1) Observe two layer security
  
 
-
 Scenario-11
-SSID and password access + user login/otp
-- two layer security
-- record logs and verify needed data is obtained 
-- explore variations and data collection
+Data collection 
+
+1) In setup SSID and password access + user login/otp
+2) Record logs and verify needed data is obtained 
+3) Explore variations and data collection
 
 
 Scenario-12
 Experiment with bridge and NAT to verify which is better
-
 
 
 Scenario-13
@@ -79,8 +74,7 @@ Dual use of wlan0 using mca changer
 
 
 Scenario-14
-
-Proxy setup
+Check benefits of proxy setup
 
 
 
