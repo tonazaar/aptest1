@@ -1,0 +1,40 @@
+
+A) Scope of setup
+1) The RSP is connected by sharing internet eth0 in laptop
+2) The RSP provides access-point for other mobiles to connect
+3) To use nmcli to setup
+
+B) Setup steps
+
+1) Command used
+
+nmcli connection add type wifi ifname wlan0 con-name local-ap autoconnect yes ssid test-ap mode ap
+nmcli connection modify local-ap 802-11-wireless.mode ap 802-11-wireless-security.key-mgmt wpa-psk ipv4.method shared 802-11-wireless-security.
+psk 'PASSWORD'
+nmcli connection up con-name
+
+2) 
+
+Configure DHCP range 
+
+Start dnsmasq
+
+
+C) Setup testing
+
+Using a mobile, connect to the AP
+
+Check the range of IP allocated
+
+Check if connection is providing internet
+
+D) Relevant images 
+
+
+
+E) References
+
+https://wiki.archlinux.org/index.php/NetworkManager
+
+
+

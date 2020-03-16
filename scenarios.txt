@@ -1,24 +1,31 @@
 
 Scenario-1
-Basic scripts
-Their explanation
+
+Setup
+1) The RSP is connected by sharing internet eth0 in laptop
+2) The RSP provides access-point for other mobiles to connect
+
 
 Scenario-2
-Stop dnsmasq
+Verify effect of dnsmasq
 
+1) Stop dnsmasq
+2) check various issues
 Known issues exist with othe DNS, references ....
 
 Scenario-3
-Frequently disconnecting etc
+Unstable network
 
-Due to dynamic mca
-
-Identifying 
-Correcting that
+1) Happens due to dynamic mca
+2) Like frequently disconnecting 
+3) Identify outputs, samples, patterns
+4) Correct it and verify
 
 
 Scenario-4
-Switching network
+Switching internet network 
+Switch eth0, with eth1
+Switch wlan0, with wlan1
 Its effect on users
 
 Scenario-5
@@ -31,11 +38,11 @@ Check what happens to existing users
 Scenario-6
 Use wpasupplicant        
 
-Proxy may not be needed (need to check its usage)
 
 Scenario-7
 Use as captive portal    
 
+1) Provide controlled access to wifi network
 
 Scenario-8
 Use keyring to protect access keys of users/groups
@@ -45,7 +52,6 @@ Use keyring to protect access keys of users/groups
 Scenario-9
 Explore voucher based access
  
-
 
 Scenario-10
 SSID and password access + user login/otp
@@ -64,35 +70,17 @@ Scenario-12
 Experiment with bridge and NAT to verify which is better
 
 
-Scenario-1
-The RSP is connected through eth in laptop
-The RSP is providing hotspot  
-- as shared 
 
-Command used
+Scenario-13
+Dual use of wlan0 using mca changer
 
-nmcli connection add type wifi ifname wlan0 con-name local-ap autoconnect yes ssid test-ap mode ap
-nmcli connection modify local-ap 802-11-wireless.mode ap 802-11-wireless-security.key-mgmt wpa-psk ipv4.method shared 802-11-wireless-security.
-psk 'PASSWORD'
-nmcli connection up con-name
+1) Setup wifi as a station and also as a accesspoint
+2) Verify it works
 
 
+Scenario-14
 
-Images of working
-
-Script to setup
-
-
-Other support tools and setup
-
-- dnsmasq
-
-- DCPD files needed
-
-- Manual config
+Proxy setup
 
 
-References
-
-https://wiki.archlinux.org/index.php/NetworkManager
 

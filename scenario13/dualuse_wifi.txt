@@ -1,0 +1,168 @@
+
+B) Tried using wifi interface for dual use (as a interet-connectivity and also as hotspot)
+
+1) Below has good example of how to have ap, station in same interface
+https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap
+2) Method also explained in
+https://wiki.archlinux.org/index.php/Software_access_point
+
+3) Also referred
+https://wiki.archlinux.org/index.php/MAC_address_spoofing#macchanger
+https://wiki.archlinux.org/index.php/Internet_sharing#Configuration
+https://linuxalfi.wordpress.com/2011/11/08/connectify-for-linux-with-single-wireless-interface/
+
+4) Facing issues
+- resource busy
+- tried methods in links
+
+method-1) iw phy phy0 interface add new0 type station (getting busy)
+method-2) iw dev wlan0 interface add wlan0_sta type managed addr 12:34:56:78:ab:cd   (getting resource busy)
+
+Will look at this later.
+
+
+
+
+
+https://unix.stackexchange.com/questions/174558/use-only-one-wireless-card-to-connect-to-wifi-network-and-share-internet-through
+
+https://linuxalfi.wordpress.com/2011/11/08/connectify-for-linux-with-single-wireless-interface/
+
+https://wiki.archlinux.org/index.php/Internet_sharing#Configuration
+
+https://wiki.archlinux.org/index.php/Software_access_point
+
+
+
+If you want to use the capability/feature, perhaps because an Ethernet connection is not available, you need to create two separate virtual interfaces for using it. Virtual interfaces for a physical device wlan0 can be created as follows: The virtual interfaces with unique MAC address are created for the network connection (wlan0_sta) itself and for the software AP/hostapd "wireless repeater":
+
+# iw dev wlan0 interface add wlan0_sta type managed addr 12:34:56:78:ab:cd  
+# iw dev wlan0 interface add wlan0_ap  type managed addr 12:34:56:78:ab:ce
+
+
+https://wiki.archlinux.org/index.php/Internet_sharing#Configuration
+
+
+
+https://wiki.archlinux.org/index.php/Network_bridge
+
+https://wiki.archlinux.org/index.php/MAC_address_spoofing#Method_2:_macchanger
+
+
+https://unix.stackexchange.com/questions/174558/use-only-one-wireless-card-to-connect-to-wifi-network-and-share-internet-through
+
+https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap
+
+
+ip link show wlan0
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DORMANT group default qlen 1000
+    link/ether dc:a6:32:60:95:4a brd ff:ff:ff:ff:ff:ff
+
+
+sudo ip link set dev wlan0  down
+[sudo] password for alarm: 
+[alarm@alarmpi aptest1]$ ip link show wlan0
+3: wlan0: <BROADCAST,MULTICAST> mtu 1500 qdisc fq_codel state DOWN mode DORMANT group default qlen 1000
+    link/ether dc:a6:32:60:95:4a brd ff:ff:ff:ff:ff:ff
+
+# iw dev wlan0 interface add wlan0_ap  type managed addr dc:a6:32:60:ab:ce
+
+
+
+
+sudo macchanger -e wlan0
+Current MAC:   8e:a5:3a:a0:f0:29 (unknown)
+Permanent MAC: dc:a6:32:60:95:4a (unknown)
+New MAC:       8c:a5:3a:8d:6f:5d (unknown)
+
+
+ip link show      
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP mode DEFAULT group default qlen 1000
+    link/ether dc:a6:32:60:95:49 brd ff:ff:ff:ff:ff:ff
+3: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DORMANT group default qlen 1000
+    link/ether 8a:fb:fa:0e:4a:36 brd ff:ff:ff:ff:ff:ff
+
+
+
+https://askubuntu.com/questions/318973/how-do-i-create-a-wifi-hotspot-sharing-wireless-internet-connection-single-adap
+
+ iw  wlan0 info
+Interface wlan0
+	ifindex 3
+	wdev 0x1
+	addr e2:66:1a:b8:46:9e
+	type managed
+	wiphy 0
+	channel 1 (2412 MHz), width: 20 MHz, center1: 2412 MHz
+	txpower 31.00 dBm
+
+
+
+
+iw phy0 info
+Wiphy phy0
+	max # scan SSIDs: 10
+	max scan IEs length: 2048 bytes
+	max # sched scan SSIDs: 16
+	max # match sets: 16
+	max # scan plans: 1
+	max scan plan interval: 508
+	max scan plan iterations: 0
+	Retry short limit: 7
+	Retry long limit: 4
+	Coverage class: 0 (up to 0m)
+	Device supports roaming.
+	Device supports T-DLS.
+	Supported Ciphers:
+		* WEP40 (00-0f-ac:1)
+		* WEP104 (00-0f-ac:5)
+		* TKIP (00-0f-ac:2)
+		* CCMP-128 (00-0f-ac:4)
+		* CMAC (00-0f-ac:6)
+	Available Antennas: TX 0 RX 0
+	Supported interface modes:
+		 * IBSS
+		 * managed
+		 * AP
+		 * P2P-client
+		 * P2P-GO
+		 * P2P-device
+
+
+
+
+ip link show wlan0
+3: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DORMANT group default qlen 1000
+    link/ether c2:34:fb:43:b8:03 brd ff:ff:ff:ff:ff:ff
+
+
+
+
+iw phy phy0 interface add new0 type wlan0_sta (getting busy)
+# iw dev wlan0 interface add wlan0_sta type managed addr 12:34:56:78:ab:cd   (getting resource busy)
+
+iw help
+
+	dev <devname> mpp dump
+		List known mesh proxy paths.
+
+
+    	dev <devname> interface add <name> type <type> [mesh_id <meshid>] [4addr on|off] [flags <flag>*] [addr <mac-addr>]
+	phy <phyname> interface add <name> type <type> [mesh_id <meshid>] [4addr on|off] [flags <flag>*] [addr <mac-addr>]
+		Add a new virtual interface with the given configuration.
+		Valid interface types are: managed, ibss, monitor, mesh, wds.
+		
+		The flags are only used for monitor interfaces, valid flags are:
+		none:     no special flags
+		fcsfail:  show frames with FCS errors
+		control:  show control frames
+		otherbss: show frames from other BSSes
+		cook:     use cooked mode
+		active:   use active mode (ACK incoming unicast packets)
+		mumimo-groupid <GROUP_ID>: use MUMIMO according to a group id
+		mumimo-follow-mac <MAC_ADDRESS>: use MUMIMO according to a MAC address
+		
+		The mesh_id is used only for mesh mode.
+

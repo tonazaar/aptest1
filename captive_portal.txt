@@ -1,0 +1,22 @@
+
+(To try)
+https://wiki.archlinux.org/index.php/NetworkManager#Captive_portals
+https://en.wikipedia.org/wiki/Captive_portal
+Captive portal
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+
+An example of a captive web portal used to log onto a restricted network.
+A captive portal is a web page accessed with a web browser that is displayed to newly connected users of a Wi-Fi or wired network before they a
+re granted broader access to network resources. Captive portals are commonly used to present a landing or log-in page which may require authent
+ication, payment, acceptance of an end-user license agreement, acceptable use policy, survey completion, or other valid credentials that both t
+he host and user agree to adhere by. Captive portals are used for a broad range of mobile and pedestrian broadband services - including cable a
+nd commercially provided Wi-Fi and home hotspots. A captive portal can also be used to provide access to enterprise or residential wired networ
+ks, such as apartment houses, hotel rooms, and business centers.
+
+
+
+For those behind a captive portal, the desktop manager may automatically open a window asking for credentials. If your desktop does not, you ca
+n use capnet-assist package (however, it currently it has a broken NetworkManager dispatcher script). Alternatively, you can create a NetworkMa
+nager dispatcher script with the following content:
+
