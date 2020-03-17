@@ -1,0 +1,30 @@
+
+Laptop using vodaphone network
+
+ssh alarm@192.168.29.203 is not reachable
+
+Jio gateway 192.168.29.1
+
+Jio may be blocking 
+
+
+Laptop using jio network
+
+ssh alarm@192.168.29.203 is reachable
+
+Jio gateway 192.168.29.1
+
+Jio is allowing     
+
+
+
+Laptop and RSP on network
+
+ssh alarm@192.168.29.203 is reachable
+
+Jio gateway 192.168.29.1
+
+Ethernet is allowing     
+
+
+
