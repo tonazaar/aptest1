@@ -27,4 +27,13 @@ Jio gateway 192.168.29.1
 Ethernet is allowing     
 
 
+88.1 not connecting, because it is in different (netmask)
+
+dnsmasq
+interface=wlan0
+  dhcp-range= 192.168.1.100, 192.168.1.200, 255.255.255.0,24h
+
+dhcpcd
+interface wlan0
+static ip_address=192.168.88.1/24
 

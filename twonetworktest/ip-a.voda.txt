@@ -1,0 +1,28 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether dc:a6:32:60:95:49 brd ff:ff:ff:ff:ff:ff
+    inet 10.42.0.66/24 brd 10.42.0.255 scope global dynamic noprefixroute eth0
+       valid_lft 3524sec preferred_lft 3524sec
+    inet 10.42.0.65/24 brd 10.42.0.255 scope global secondary dynamic noprefixroute eth0
+       valid_lft 3523sec preferred_lft 3523sec
+    inet6 fe80::8e4f:33a8:13:a7c6/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a6f1:dbb4:8018:c75e/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether dc:a6:32:60:95:4a brd ff:ff:ff:ff:ff:ff
+    inet 192.168.43.97/24 brd 192.168.43.255 scope global dynamic noprefixroute wlan0
+       valid_lft 3323sec preferred_lft 3323sec
+    inet 192.168.88.1/24 brd 192.168.88.255 scope global noprefixroute wlan0
+       valid_lft forever preferred_lft forever
+    inet6 2402:3a80:cda:ddc3:c792:c656:78b2:4223/64 scope global mngtmpaddr noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 2402:3a80:cda:ddc3:41c0:4554:1a61:262d/64 scope global noprefixroute 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::82da:bd46:381e:4993/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
